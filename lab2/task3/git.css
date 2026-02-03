@@ -65,7 +65,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    border: 1px solid #bdbdbd;       /* тонкая рамка */
+    border: 1px solid #bdbdbd;      
     border-radius: 10px;
     padding: 20px;
     background-color: #fff;
@@ -84,7 +84,7 @@ body {
     top: -2px;
     left: -2px;
 
-    width: calc(100% + 4px); /* ⬅ вся ширина + бордер */
+    width: calc(100% + 4px); 
     height: 36px;
 
     background: #0969da;
@@ -126,10 +126,10 @@ body {
 .starting{
         display: flex;
         flex-direction: column;
-        gap: 10px; /* ⬅ расстояние между строками */
+        gap: 10px; 
 }
 .starting p{
-    margin: 0; /* ⬅ убираем дефолтные отступы */
+    margin: 0; 
 }
 .blue{
     color:#1181e9;
@@ -158,4 +158,16 @@ body {
     text-align: left;
     box-shadow: 0 4px 12px rgba(27, 31, 36, 0.08);
     transition: 0.3s ease;
+}
+@media (max-width: 768px) {
+    .second {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .second > article {
+        width: 100%;
+    }
+    .addon-grid {
+        grid-template-columns: 1fr;
+    }
 }
