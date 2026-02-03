@@ -17,7 +17,7 @@ body {
 }
 .insta .left {
     display: flex;
-    flex-direction: row; /* 🔥 было row */
+    flex-direction: row; 
     gap: 40px;
 }
 .insta .right{
@@ -26,7 +26,7 @@ body {
     border-left: 1px solid #dbdbdb;
 
     padding-left: 40px;
-    justify-content: center; /* по вертикали */
+    justify-content: center; 
     align-items: center;  
 }
 .insta .left .logoleft .logo{
@@ -133,13 +133,13 @@ body {
     padding: 0 12px;
     border-radius: 8px;
     border: 1px solid #dbdbdb;
-    font-size: 30px;   /* ← слева */
+    font-size: 30px;   
 }
 .voity {
-    background-color: #4cb5f9; /* синий как у Instagram */
-    color: white;              /* цвет текста */
+    background-color: #4cb5f9; 
+    color: white;             
     border: none;
-    font-size: 30px;          /* убрать рамку */
+    font-size: 30px;         
 }
 .footer {
   width: 100%;
@@ -149,7 +149,6 @@ body {
   margin: 40px auto 0;
   padding: 20px 40px;
 }
-
 .footer a {
   text-decoration: none;
   color: #8e8e8e;
@@ -169,40 +168,30 @@ body {
     border: none;
     outline: none;   
     background: white;
-
-    
 }
-/* ===== АДАПТИВ ===== */
+
 @media (max-width: 900px) {
-
-
-
   .insta .left {
-    display: none; /* 🔥 убираем телефон */
+    display: none; 
   }
-
   .insta .right {
     border-left: none;
     padding-left: 0;
     height: auto;
   }
-
   .form-cont {
-    margin-top: 0; /* 🔥 убираем сдвиг вниз */
+    margin-top: 0; 
     width: 100%;
     max-width: 400px;
   }
-
   body {
     align-items: center;
   }
-
   .footer {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
   }
-
   .last {
     flex-direction: column;
     gap: 10px;
