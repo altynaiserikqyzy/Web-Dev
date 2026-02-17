@@ -1,0 +1,35 @@
+<div class="product-card">
+  <div class="gallery-container">
+    <div class="main-image">
+      <img [src]="product.image" [alt]="product.name" class="product-main-image">
+      <button *ngIf="product.images.length > 1" class="nav-btn prev" (click)="prevImage($event)">❮</button>
+      <button *ngIf="product.images.length > 1" class="nav-btn next" (click)="nextImage($event)">❯</button>
+    </div>
+    
+    <div class="thumbnail-row" *ngIf="product.images.length > 1">
+      <img *ngFor="let img of product.images; let j = index"
+           [src]="img" 
+           [class.active]="j === getCurrentImageIndex()"
+           (click)="setMainImage(img, $event)"
+           class="thumbnail">
+    </div>
+  </div>
+
+  <h3>{{ product.name }}</h3>
+  <p>{{ product.description }}</p>
+  <p class="price">{{ product.price | number }} KZT</p>
+  
+  <p class="rating">
+    <span *ngFor="let star of [1,2,3,4,5]" class="star" [class.filled]="star <= round(product.rating)">★</span>
+    <span class="rating-value">({{ product.rating }})</span>
+  </p>
+  
+  <div class="share-buttons">
+    <button (click)="shareOnWhatsApp()" class="share-btn whatsapp">
+      <span class="icon">📱</span> WhatsApp
+    </button>
+    <button (click)="shareOnTelegram()" class="share-btn telegram">
+      <span class="icon">📨</span> Telegram
+    </button>
+  </div>
+</div>

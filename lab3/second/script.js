@@ -1,38 +1,45 @@
-const taskForm = document.getElementById('taskForm');
-const taskInput = document.getElementById('taskInput');
-const taskList = document.getElementById('taskList');
+document.addEventListener("DOMContentLoaded", function () {
 
-taskForm.addEventListener('submit', (event) => {
-  event.preventDefault();
+    const form = document.getElementById("todo-form");
+    const input = document.getElementById("task");
+    const taskList = document.getElementById("task-list");
 
-  const taskText = taskInput.value.trim();
-  if (!taskText) {
-    return;
-  }
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); 
 
-  const listItem = document.createElement('li');
+        const taskText = input.value.trim();
+        if (taskText === "") return;
 
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
+        const li = document.createElement("li");
 
-  const textSpan = document.createElement('span');
-  textSpan.textContent = taskText;
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.addEventListener("change", function () {
+            span.classList.toggle("completed");
+        });
 
-  const deleteButton = document.createElement('button');
-  deleteButton.textContent = 'Delete';
+        const span = document.createElement("span");
+        span.textContent = taskText;
 
-  listItem.appendChild(checkbox);
-  listItem.appendChild(textSpan);
-  listItem.appendChild(deleteButton);
-  taskList.appendChild(listItem);
+        const img = document.createElement("img");
+        img.src = "images-2.png"; 
+        img.alt = "delete";
+        img.className = "trash-icon";
 
-  taskInput.value = '';
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "delete-btn";
+        deleteBtn.appendChild(img);
 
-  checkbox.addEventListener('change', () => {
-    textSpan.classList.toggle('done', checkbox.checked);
-  });
+        deleteBtn.addEventListener("click", function () {
+            li.remove();
+        });
 
-  deleteButton.addEventListener('click', () => {
-    taskList.removeChild(listItem);
-  });
+        li.appendChild(checkbox);
+        li.appendChild(span);
+        li.appendChild(deleteBtn);
+        taskList.appendChild(li);
+
+        input.value = ""; 
+    });
+
 });

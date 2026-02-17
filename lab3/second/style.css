@@ -8,68 +8,86 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
 }
-
-header {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.app {
-  width: 400px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.input-box {
+header nav{
   display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
+  padding: 30px 0px 30px  50px;
+  background-color:black;
+  height: 70px;
+  align-items: center;
+  color:gray;
+  font-size: 5vh;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
 }
-
-input {
-  flex: 1;
+header h1{
+  text-align: center;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main form{
+  align-items: center;
+  gap: 30px;
+  padding: 12px;
+  padding: 30px;
+}
+main form input{
+  height: 40px;
+  width:35vh;
+  font-size: 18px;
+  padding-left: 20px;
+  border:solid rgb(197, 195, 195) 1px ;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+main form button{
+  height: 50px;
+  width: 90px;
+  border: #1864ac solid 2px;
+  border-radius: 5px;
   padding: 10px;
-  font-size: 16px;
+  background-color: #075cab;
+  color: #f9f9f9;
 }
-
-button {
-  padding: 10px 14px;
-  font-size: 16px;
-  background-color: #2563eb;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-li {
+main form button:hover {
+      background-color: #0a4a8a; 
+    }
+#task-list {
   list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  width: 60vh;
+  font-size: 20px;
+  border: 1px solid rgb(197, 195, 195);
+  overflow: hidden;
+
+}
+
+#task-list li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  background: white;
+  border-bottom: 1px solid rgb(197, 195, 195);
 }
-
-li span {
-  flex: 1;
+#task-list li:last-child {
+  border-bottom: none;
 }
-
-.done {
+.completed {
   text-decoration: line-through;
-  color: #888;
+  color: gray;
 }
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+.trash-icon {
+  width: 25px;   
+  height: 25px;
+}
+.delete-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px; 
 }
